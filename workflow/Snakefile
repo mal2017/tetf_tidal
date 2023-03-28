@@ -1,0 +1,19 @@
+import sys
+import peppy
+import glob
+
+configfile: "config/config.yaml"
+
+
+subworkflow refs:
+    workdir: "../../tetf_refs/"
+    snakefile: "../../tetf_refs/workflow/Snakefile"
+
+
+include: "rules/get_tidal_results.smk"
+include: "rules/feature_overlaps.smk"
+
+rule all:
+    input:
+        "results/collected_insertions/insertions_by_strain.tsv.gz",
+        "results/overlaps/overlaps.tsv.gz"

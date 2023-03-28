@@ -1,0 +1,3 @@
+# TIDAL BULK RESULTS
+TIDAL_ZIP: http://www.bio.brandeis.edu/laulab/Tidal_Fly/Tidal_Fly_v1Archive20150930.zip
+MAXGAP_FOR_TE_OVERLAP: 5000 # for determine what counts as a genic insertion
