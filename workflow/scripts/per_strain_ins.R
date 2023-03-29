@@ -34,7 +34,7 @@ ref$source <- "reference"
 ins <- ins %>% 
   mutate(strand=ifelse(TE_coord_start > TE_coord_end,"-","+")) %>%
   dplyr::select(chr=Chr,start=Chr_coord_5p,end=Chr_coord_3p,name=TE, strand) %>%
-  mutate(start = start + 1) %>%
+  mutate(start = start) %>%
   mutate(chr=str_remove(chr,"chr"))%>%
   mutate(source = "Tidal") %>%
   GRanges()
@@ -44,7 +44,7 @@ deps <- deps %>%
   filter(Chr_5p...2 == Chr_mid) %>%
   dplyr::select(chr=Chr_5p...2,start=Chr_coord_5p_end,end=Chr_coord_3p_start,name=repName) %>%
   mutate(start_old = start, end_old = end, start=ifelse(start_old > end_old,end,start),end=ifelse(start_old > end_old,start_old,end)) %>%
-  mutate(start = start + 1) %>%
+  mutate(start = start) %>%
   mutate(chr=str_remove(chr,"chr"))%>%
   GRanges()
 

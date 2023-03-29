@@ -12,8 +12,10 @@ subworkflow refs:
 
 include: "rules/get_tidal_results.smk"
 include: "rules/feature_overlaps.smk"
+include: "rules/viz.smk"
 
 rule all:
     input:
         "results/collected_insertions/insertions_by_strain.tsv.gz",
-        "results/overlaps/overlaps.tsv.gz"
+        "results/overlaps/overlaps.tsv.gz",
+        "results/beds/dgrp_tidal_insertions.bb"
