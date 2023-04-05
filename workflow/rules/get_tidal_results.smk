@@ -45,7 +45,7 @@ rule get_per_strain_insertions:
         poly_dir = rules.extract_polymorphic_insertions.output
     params:
         poly_ins_tsv = rules.extract_polymorphic_insertions.output.dir + "/{tidal_strain}_result/{tidal_strain}_Inserts_Annotated.txt",
-        poly_deps_tsv = rules.extract_polymorphic_insertions.output.dir + "/{tidal_strain}_result/{tidal_strain}_Depletion_Annotated.txt",
+        poly_deps_tsv = rules.extract_polymorphic_insertions.output.dir + "/{tidal_strain}_result/{tidal_strain}_Depletion_Annotated_TEonly.txt",
     output:
         tsv="results/polymorphic_insertions/{tidal_group}/{tidal_strain}.tsv"
     script:
