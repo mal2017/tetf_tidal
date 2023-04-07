@@ -9,5 +9,9 @@ rule annotate_insertion_penetrance:
     output:
         all_ins = "results/beds/dgrp_tidal_insertions.bb",
         penetrance = "results/beds/dgrp_tidal_insertions.unique.bb"
+    resources:
+        time=20,
+        mem=32000,
+        cpus=1
     script:
         "../scripts/annotate_insertion_penetrance.R"
