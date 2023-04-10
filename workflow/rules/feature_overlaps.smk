@@ -29,3 +29,20 @@ rule excluded_gene_te_pairs:
         cpus=1
     script:
         "../scripts/excluded_gene_te_pairs.R"
+
+rule tidal_strains:
+    """
+    list of strains analyzed in tidal
+    """
+    input:
+        tsv = rules.feature_overlaps.output.tsv
+    output:
+        tsv="results/overlaps/tidal_strains.tsv"
+    resources:
+        time=20,
+        mem=12000,
+        cpus=1
+    shell:
+        """
+        zcat {input.tsv} | grep -v "Strain" | cut -f 1| sort | uniq > {output.tsv}
+        """
