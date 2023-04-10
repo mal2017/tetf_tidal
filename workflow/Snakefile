@@ -21,3 +21,4 @@ rule all:
         "results/overlaps/overlaps.tsv.gz",
         "results/beds/dgrp_tidal_insertions.bb",
         "results/vcf/DGRP_flies_polymorphic_tes.vcf.bgz",
+        "results/overlaps/excluded_gene_te_pairs.tsv"
